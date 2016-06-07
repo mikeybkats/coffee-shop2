@@ -1,0 +1,156 @@
+/*
+colors
+#AB6D24
+#78460B
+#DE3700
+#38E18A
+#11AB30
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  display: inline;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  color: white;
+  margin: 10px 0px 15px;
+  display: block;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: black;
+  display: inline;
+  float: right;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  display: inline;
+  float: right;
+  color: white;
+  letter-spacing: 4px;
+}
+
+.container {
+  background-image: url("images/background.jpg");
+  }
+
+.content-width {
+  max-width: 950px;
+  margin: 0px auto;
+}
+
+.main-nav {
+  background-color: #AB6D24;
+  min-height: 75px;
+}
+
+.small-logo {
+	max-width: 50px;
+	padding-bottom: 15px;
+}
+
+.nav-content {
+  padding-top: 18px;
+}
+
+.stripes {
+  display: inline;
+  float: left;
+}
+
+.hero {
+  background-color: black;
+}
+
+.hero-logo {
+  margin: 0px 10px 0px 12%;
+}
+
+.hero-image {
+  float: right;
+  margin: 8px 0px 0px 10px;
+}
+
+.body {
+  padding: 40px 0px 40px 0px;
+  max-width: 900px;
+}
+
+.cta {
+  float: right;
+  margin: 45px 100px 45px 0;
+  display: block;
+}
+
+.hero-margin {
+  padding: 30px 10px 30px 10px;
+}
+
+.images {
+  display: inline-block;
+}
+
+.info {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+.about-text-left {
+  max-width: 300px;
+  display: inline-block;
+  padding: 20px 140px 0px 45px;
+  margin-right: 35px;
+}
+
+.about-text-right {
+  max-width: 300px;
+  display: inline-block;
+  margin-right: 35px;
+}
+
+.footer {
+  background-color: #AB6D24;
+  min-height: 100px;
+}
+
+.footer-content {
+  margin: 20px 0 0 0;
+}
