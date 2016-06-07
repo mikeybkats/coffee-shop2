@@ -96,7 +96,7 @@ Location.prototype.totalToGoPoundsOfBeansHourCalc = function(){
   }
 };
 
-function drawTable () {
+function drawTables () {
   var rowOne = document.createElement('tr');
   var dataOne = document.createElement('td');
   var dataTwo = document.createElement('td');
@@ -105,57 +105,6 @@ function drawTable () {
   var dataTwoLast = document.createElement('td');
 
   coffeeTable.appendChild(rowOne);
-  rowOne.appendChild(dataOne);
-  rowOne.appendChild(dataTwo);
-
-  dataOne.textContent = '';
-  dataTwo.textContent = 'Daily Location Total';
-
-  for (var i = 0; i < hours.length; i++){
-    var data = document.createElement('td');
-    rowOne.appendChild(data);
-    data.textContent = hours[i];
-  }
-
-  for (var i = 0; i < allLocations.length; i++){
-    var row = document.createElement('tr');
-    var dataLocationName = document.createElement('td');
-    var dataLocationTotal = document.createElement('td');
-
-    coffeeTable.appendChild(row);
-    row.appendChild(dataLocationName);
-    row.appendChild(dataLocationTotal);
-
-    dataLocationName.textContent = allLocations[i].location;
-    dataLocationTotal.textContent = allLocations[i].allBeansNeededDaily;
-
-    for(var j = 0; j < hours.length; j++){
-      var dataLocationPerHour = document.createElement('td');
-      row.appendChild(dataLocationPerHour);
-      dataLocationPerHour.textContent = allLocations[i].totalBeansNeededPerHour[j];
-    }
-  }
-  coffeeTable.appendChild(lastRow);
-  lastRow.appendChild(dataOneLast);
-  lastRow.appendChild(dataTwoLast);
-  dataOneLast.textContent = 'Totals';
-  dataTwoLast.textContent = allBeansColumnTotal();
-
-  for (var i = 0; i < hours.length; i++){
-    var totalsData = document.createElement('td');
-    lastRow.appendChild(totalsData);
-    totalsData.textContent = allBeansTotalRow()[i];
-  }
-}
-
-function drawTableBaristas(){
-  var rowOne = document.createElement('tr');
-  var dataOne = document.createElement('td');
-  var dataTwo = document.createElement('td');
-  var lastRow = document.createElement('tr');
-  var dataOneLast = document.createElement('td');
-  var dataTwoLast = document.createElement('td');
-
   baristasTable.appendChild(rowOne);
   rowOne.appendChild(dataOne);
   rowOne.appendChild(dataTwo);
@@ -174,29 +123,36 @@ function drawTableBaristas(){
     var dataLocationName = document.createElement('td');
     var dataLocationTotal = document.createElement('td');
 
+    coffeeTable.appendChild(row);
     baristasTable.appendChild(row);
     row.appendChild(dataLocationName);
     row.appendChild(dataLocationTotal);
 
     dataLocationName.textContent = allLocations[i].location;
+    dataLocationTotal.textContent = allLocations[i].allBeansNeededDaily;
     dataLocationTotal.textContent = allLocations[i].numBaristasTotal;
 
     for(var j = 0; j < hours.length; j++){
       var dataLocationPerHour = document.createElement('td');
       row.appendChild(dataLocationPerHour);
+      dataLocationPerHour.textContent = allLocations[i].totalBeansNeededPerHour[j];
       dataLocationPerHour.textContent = allLocations[i].numBaristas[j];
     }
   }
+  coffeeTable.appendChild(lastRow);
   baristasTable.appendChild(lastRow);
   lastRow.appendChild(dataOneLast);
   lastRow.appendChild(dataTwoLast);
   dataOneLast.textContent = 'Totals';
+  dataTwoLast.textContent = allBeansColumnTotal();
   dataTwoLast.textContent = allBaristasColumnTotal();
 
   for (var i = 0; i < hours.length; i++){
     var totalsData = document.createElement('td');
     lastRow.appendChild(totalsData);
+    totalsData.textContent = allBeansTotalRow()[i];
     totalsData.textContent = allBaristasTotalRow()[i];
+
   }
 }
 
@@ -257,8 +213,7 @@ function addNewLocationFromForm(event){
   if (location === 'unnamed' || minCustomersHour === 0 || maxCustomersHour === 0 || cupsPerCustomer === 0 || poundsOfBeansToGo === 0){
     allLocations = [pikePlaceMarketLocation, capitolHillLocation, seattlePublicLibraryLocation, southLakeUnionLocation, seaTacAirportLocation];
     loadTableData();
-    drawTable();
-    drawTableBaristas();
+    drawTables();
     alert('Please add all the pertinent data to the form before posting a new location');
     return;
   }
@@ -267,8 +222,7 @@ function addNewLocationFromForm(event){
     allLocations.push(newLocation);
     console.log(allLocations);
     loadTableData();
-    drawTable();
-    drawTableBaristas();
+    drawTables();
   }
 }
 
@@ -287,7 +241,6 @@ function loadTableData(){
 };
 
 loadTableData();
-drawTable();
-drawTableBaristas();
+drawTables();
 
 locationForm.addEventListener('submit', addNewLocationFromForm);
