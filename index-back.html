@@ -1,0 +1,40 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <title>Campfire Coffee Backend</title>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+      <div class="table-spacing">
+        <h2>Beans needed by location each day</h2>
+        <table id="coffee-table"></table>
+      </div>
+      <div class="table-spacing">
+        <h2>Baristas needed by location each day</h2>
+        <table id="baristas-table"></table>
+      </div>
+      <form id="new-location-form">
+        <fieldset>
+            <legend>Add a new location</legend>
+
+            <label for="newLocationName">New Location Name</label>
+            <input name="newLocationName" type="text" />
+
+            <label for="minCustHour">Min Customers Per Hour</label>
+            <input name="minCustHour" type="text" />
+
+            <label for="maxCustHour">Max Customers Per Hour</label>
+            <input name="maxCustHour" type="text" />
+
+            <label for="cupsPerCustomer">Average Cups Per Customer</label>
+            <input name="cupsPerCustomer" type="text" />
+
+            <label for="toGoPounds">To-Go Pounts Per Customer</label>
+            <input name="toGoPounds" type="text" />
+
+            <button id="submit-button" type="submit">Add New Location</button>
+        </fieldset>
+      </form>
+      <script type="text/javascript" src="app.js"></script>
+    </body>
+  </html>
